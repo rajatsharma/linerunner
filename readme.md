@@ -3,14 +3,11 @@
 
 
 - [Core](#core)
-	- [](#)
 	- [Request User information](#request-user-information)
-	
+
 
 
 # Core
-
-## 
 
 
 
@@ -38,5 +35,3 @@
 |---------|-----------|--------------------------------------|
 | url			| String			|  <p>Url of the Remote Geojson. Can be used to simplify any geojson</p>							|
 | tol			| Number			|  <p>Tolerance of the Simplification, much to less. 1 is less simplified</p>							|
-
-
