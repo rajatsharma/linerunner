@@ -1,18 +1,14 @@
+'use strict';
+
 var express = require('express');
 var router = express.Router();
 var simplify = require('simplify-geojson');
 var request = require('request');
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'LineRunner' });
-});
+var { CrossOriginResponse, CoreLineRunner, LineRunnerLegacy } = require('../routines/requesthandlers');
 
-router.get('/geoJsonUrl/:url/tolerance/:tol', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  request(req.params.url, function(error, response, body) {
-    res.send(simplify(JSON.parse(body), req.params.tol));
-  });
-});
+/* GET home page. */
+router.get('*', CrossOriginResponse);
+router.post('/core', CoreLineRunner);
+router.get('/geoJsonUrl/:url/tolerance/:tol', LineRunnerLegacy);
 
 module.exports = router;
