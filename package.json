@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "release":"apidoc -i routes/ -o docs/",
+    "document":"apidoc-markdown -p docs -o readme.md"
   },
   "dependencies": {
     "body-parser": "~1.13.2",

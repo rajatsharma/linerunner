@@ -1,9 +1,10 @@
 'use strict';
 
-var request = require('request');
-var simplify = require('simplify-geojson');
-var { ReverseGeocode } = require('../routines/promises');
-var country = require('countryjs');
+let request = require('request');
+let simplify = require('simplify-geojson');
+let country = require('countryjs');
+let { DEFAULTTOLERANCE } = require('../constants/internalconstants');
+let { ReverseGeocode } = require('../routines/promises');
 
 const CrossOriginResponse = (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -15,9 +16,10 @@ const CoreLineRunner = (req, res, next) => {
     ReverseGeocode({ lat: req.body.lat, lng: req.body.lng })
         .then(location => location.results[0].components.country_code.toUpperCase())
         .then(countryCode => country.geoJSON(countryCode))
-        .then(geojson => req.body.rdp && simplify(geojson,1) || geojson)
-        .then(simplifiedJson=>res.send(simplifiedJson))
-        .catch(err=>res.send(err));
+        //simplify geojson or not
+        .then(geojson => req.body.rdp && simplify(geojson, DEFAULTTOLERANCE) || geojson)
+        .then(geojson => res.send(geojson))
+        .catch(err => res.send(err));
 };
 
 const LineRunnerLegacy = (req, res, next) => {
