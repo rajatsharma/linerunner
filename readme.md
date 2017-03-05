@@ -1,6 +1,6 @@
-# LineRunner v0.1.0
+# LineRunner v0.0.0
 
-API Documentation
+
 
 - [Core](#core)
 	- [Main LineRunner](#main-linerunner)
@@ -12,7 +12,7 @@ API Documentation
 
 ## Main LineRunner
 
-
+<p>Takes Lat, Lng of the location and returns the FeatureCollection(GeoJSON) of the country of the location. The RDP flag tells whether to simplify the FeatureCollection with Ramer-Douglas-Peuckar or not.</p>
 
 	POST /core
 
@@ -27,7 +27,7 @@ API Documentation
 
 ## Legacy Linerunner
 
-
+<p>Takes url of the remote Geojson and returns it after applying Ramer-Douglas-Peuckar on it.</p>
 
 	GET /geoJsonUrl/:url/tolerance/:tol
 
