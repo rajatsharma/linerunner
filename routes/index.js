@@ -10,7 +10,7 @@ var { CrossOriginResponse, CoreLineRunner, LineRunnerLegacy } = require('../rout
 router.get('*', CrossOriginResponse);
 
 /**
- * @api {post} /core
+ * @api {post} /core Main LineRunner
  * @apiName LineRunner
  * @apiGroup Core
  *
@@ -28,7 +28,7 @@ router.get('*', CrossOriginResponse);
 router.post('/core', CoreLineRunner);
 
 /**
- * @api {get} /geoJsonUrl/:url/tolerance/:tol Request User information
+ * @api {get} /geoJsonUrl/:url/tolerance/:tol Legacy Linerunner
  * @apiName LineRunnerLegacy
  * @apiGroup Core
  *
