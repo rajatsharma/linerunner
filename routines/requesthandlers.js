@@ -1,7 +1,7 @@
 'use strict';
 
 let request = require('request');
-let simplify = require('simplify-geojson');
+let simplify = require('./../lib/geojsonsimplify');
 let country = require('countryjs');
 let { DEFAULTTOLERANCE } = require('../constants/internalconstants');
 let { ReverseGeocode } = require('../routines/promises');

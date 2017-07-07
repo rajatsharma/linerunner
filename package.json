@@ -1,11 +1,11 @@
 {
   "name": "LineRunner",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "release":"apidoc -i routes/ -o docs/",
-    "document":"apidoc-markdown -p docs -o readme.md"
+    "release": "apidoc -i routes/ -o docs/",
+    "document": "apidoc-markdown -p docs -o readme.md"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -15,7 +15,6 @@
     "express": "~4.13.1",
     "morgan": "~1.6.1",
     "request": "^2.72.0",
-    "serve-favicon": "~2.3.0",
-    "simplify-geojson": "^1.0.2"
+    "serve-favicon": "~2.3.0"
   }
 }

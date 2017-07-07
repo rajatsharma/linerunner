@@ -2,7 +2,6 @@
 
 var express = require('express');
 var router = express.Router();
-var simplify = require('simplify-geojson');
 var request = require('request');
 var { CrossOriginResponse, CoreLineRunner, LineRunnerLegacy } = require('../routines/requesthandlers');
 
